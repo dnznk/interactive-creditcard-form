@@ -1,0 +1,290 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Space Grotesk", sans-serif;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  bottom: 0;
+  position: fixed;
+  width: 100vw;
+}
+
+body {
+  max-width: 90rem;
+  margin: 2rem auto;
+}
+
+.container {
+  background-image: url("/images/bg-main-desktop.png");
+  background-size: initial;
+  background-position-x: 0;
+  background-position-y: 0;
+  background-repeat: no-repeat;
+  min-width: 100vw;
+  min-height: 100vh;
+  position: relative;
+  overflow: scroll;
+}
+
+.card-front {
+  position: absolute;
+  top: 200px;
+  left: 200px;
+  background-image: url("/images/bg-card-front.png");
+  background-size: initial;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 447px;
+  height: 245px;
+  color: white;
+}
+
+.logo-front {
+  padding: 1.5rem;
+}
+
+.card-number-front {
+  font-size: 1.75rem;
+  padding: 1rem 2rem 0 1.5rem;
+  letter-spacing: 3px;
+}
+
+.card-ext-details {
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem 1.5rem 0 1.5rem;
+}
+
+.expiry-date-front {
+  display: flex;
+}
+
+.card-back {
+  position: absolute;
+  top: 480px;
+  left: 300px;
+  background-image: url("/images/bg-card-back.png");
+  background-size: initial;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 447px;
+  height: 245px;
+  color: white;
+}
+
+.card-details-back {
+  position: relative;
+}
+
+.cvc-number-back {
+  position: absolute;
+  top: 110px;
+  right: 50px;
+}
+
+.form {
+  position: absolute;
+  top: 200px;
+  left: 850px;
+  font-size: 0.85rem;
+  overflow: visible;
+}
+
+.form input {
+  font-size: 1rem;
+  padding: 0.5rem;
+  border-radius: 10px;
+  border: solid 1px lightgray;
+  margin-bottom: 1rem;
+}
+
+.input-name-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-name-container > input {
+  width: 350px;
+}
+
+.card-number-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-number-container > input {
+  width: 350px;
+}
+
+.extended-card-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.ext-card-details-input {
+  display: flex;
+}
+
+.ext-date-row {
+  flex-direction: row;
+}
+
+.ext-date-row input {
+  width: 35px;
+}
+
+.cvc-input {
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+}
+
+.confirm-button,
+.continue-button {
+  background-color: hsl(278, 68%, 11%);
+  color: hsl(0, 0%, 100%);
+  width: 100%;
+  border-radius: 10px;
+  font-size: 1rem;
+  padding: 0.5rem 0;
+}
+
+.confirm-button:hover,
+.continue-button:hover {
+  background-color: rgb(33, 9, 47, 0.9);
+  cursor: pointer;
+}
+
+.confirmed-container {
+  display: none;
+  position: absolute;
+  top: 200px;
+  left: 850px;
+  font-size: 0.85rem;
+  overflow: visible;
+  text-align: center;
+  width: 350px;
+}
+
+.confirmed-container div {
+  margin-bottom: 1rem;
+}
+
+.confirmed-text p:first-child {
+  font-size: 2rem;
+  color: hsl(278, 68%, 11%);
+}
+
+input:valid {
+  border: 2px solid hsl(278, 94%, 30%);
+}
+
+input:focus {
+  outline: none;
+}
+
+input:focus:invalid {
+  border: 2px solid red;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+@media (max-width: 375px) {
+  body {
+    width: 375px;
+    margin: 0;
+  }
+  .container {
+    background-image: url("/images/bg-main-mobile.png");
+    background-size: contain;
+  }
+  .logo-front img {
+    width: 30px;
+    height: 30px;
+  }
+  .card-back {
+    top: 2rem;
+    left: 5rem;
+    z-index: 0;
+    pointer-events: none;
+    background-size: contain;
+    width: 257px;
+    height: 145px;
+    font-size: 0.5rem;
+  }
+  .cvc-number-back {
+    top: 65px;
+    left: 210px;
+  }
+  .card-front {
+    top: 12rem;
+    left: 2rem;
+    z-index: 1;
+    pointer-events: none;
+    background-size: contain;
+    width: 257px;
+    height: 145px;
+  }
+  .card-number-front {
+    font-size: 0.75rem;
+    padding: 0.5rem 1.5rem 0 1rem;
+    letter-spacing: 3px;
+  }
+  .card-name-front {
+    padding: 0.5rem 0 0.5rem 1rem;
+  }
+  .expiry-date-front {
+    padding: 0;
+    margin: 0;
+    /* align-items: center */
+    padding: 0.5rem 1rem 0.5rem 0;
+  }
+  .card-details-front {
+    width: 257px;
+  }
+  .card-ext-details {
+    padding: 0;
+    font-size: 0.25rem;
+  }
+  .form {
+    position: absolute;
+    top: 400px;
+    left: 48.5px;
+    font-size: 0.25rem;
+    margin: 0 auto;
+  }
+  .form input {
+    font-size: 0.55rem;
+  }
+  .confirmed-container {
+    top: 500px;
+    left: 20%;
+  }
+  .input-name-container > input {
+    width: 250px;
+  }
+  .card-number-container > input {
+    width: 250px;
+  }
+  .confirm-button,
+  .continue-button {
+    font-size: 0.75rem;
+  }
+  .confirmed-container {
+    font-size: 0.55rem;
+    left: 15px;
+    top: 400px;
+  }
+  .confirmed-text p:first-child {
+    font-size: 1rem;
+  }
+}

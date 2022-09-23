@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <script defer src="app.js"></script>
+
+    <link rel="stylesheet" href="style.css" />
+
+    <title>Frontend Mentor | Interactive cc details form</title>
+  </head>
+  <body>
+    <section class="container">
+      <section class="card-front">
+        <div class="card-details-front">
+          <div class="logo-front">
+            <img src="/images/card-logo.svg" alt="" />
+          </div>
+          <div class="card-number-front">0000 0000 0000 0000</div>
+          <div class="card-ext-details">
+            <div class="card-name-front">Jane Appleseed</div>
+            <div class="expiry-date-front">
+              <p class="mm">00</p>
+              /
+              <p class="yy">00</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="card-back">
+        <div class="card-details-back">
+          <div class="cvc-number-back">000</div>
+        </div>
+      </section>
+      <form
+        method="get"
+        class="form"
+        id="form"
+        onsubmit="confirmedScreen(this);return false"
+      >
+        <div class="input-field">
+          <div class="input-name-container">
+            <label for="name-input">CARDHOLDER NAME</label>
+            <input
+              id="name-input"
+              oninput="cardname(this)"
+              name="name-input"
+              type="text"
+              placeholder="e.g. Jane Appleseed"
+              required
+            />
+          </div>
+
+          <div class="card-number-container">
+            <label for="card-number-input">CARD NUMBER</label>
+            <input
+              id="card-number-input"
+              oninput="cardnumber(this)"
+              name="card-number-input"
+              type="text"
+              inputmode="numeric"
+              pattern="[0-9]{16}"
+              placeholder="e.g. 1234 5678 9123 0000"
+              required
+            />
+          </div>
+
+          <div action="" method="post" class="extended-card-container">
+            <div class="ext-card-details-input">
+              <div class="ext-date-input">
+                <label for="ext-date-input">EXP. DATE</label>
+                <div class="ext-date-row">
+                  <input
+                    id="month-input"
+                    oninput="month(this)"
+                    name="ext-date-input"
+                    type="text"
+                    inputmode="numeric"
+                    pattern="[0-9]{2}"
+                    placeholder="MM"
+                    required
+                  />
+                  <input
+                    id="year-input"
+                    oninput="year(this)"
+                    name="ext-date-input"
+                    type="text"
+                    inputmode="numeric"
+                    pattern="[0-9]{2}"
+                    placeholder="YY"
+                    required
+                  />
+                </div>
+              </div>
+              <div class="cvc-input">
+                <label for="cvc-input">CVC</label>
+                <input
+                  id="cvc-input"
+                  oninput="cvc(this)"
+                  name="cvc-input"
+                  type="text"
+                  inputmode="numeric"
+                  pattern="[0-9]{3}"
+                  placeholder="e.g. 123"
+                  required
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="confirmation-container">
+          <button type="submit" class="confirm-button">Submit</button>
+        </div>
+      </form>
+      <section class="confirmed-container">
+        <div class="confirmed-logo">
+          <img src="images/icon-complete.svg" alt="" />
+        </div>
+        <div class="confirmed-text">
+          <p>THANK YOU!</p>
+          <p>We've added your card details</p>
+        </div>
+        <div class="confirmed-continue-button">
+          <button class="continue-button" onclick="cont(this)">Continue</button>
+        </div>
+      </section>
+      <div class="attribution">
+        Challenge by Frontend Mentor. Coded by Daniel Zenke.
+      </div>
+    </section>
+
+    <!-- Completed state start -->
+    <!-- <section class="confirmed-container">
+      <div class="confirmed-logo">
+        <img src="images/icon-complete.svg" alt="" />
+      </div>
+      <div class="confirmed-text">
+        <p>Thank you!</p>
+        <p>We've added your card details</p>
+      </div>
+      <div class="confirmed-continue-button">
+        <button class="continue-button" onclick="cont(this)"></button>
+      </div>
+    </section> -->
+  </body>
+</html>
